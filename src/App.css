@@ -1,0 +1,225 @@
+/* General body styling */
+body {
+  overflow: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #2d2d2d;
+  color: #f4f4f4;
+}
+
+/* Resizable container to hold the sidebar and main content */
+.resizable-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 200px; /* Fixed width for the sidebar */
+  height: 100vh; /* Ensure it spans the entire height of the viewport */
+  overflow-y: auto; /* Allow scrolling if the content exceeds the height */
+  padding: 10px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  background-color: #f4f4f4;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .sidebar {
+  background-color: #444;
+}
+
+/* Category button styling */
+.sidebar button {
+  width: 180px; /* Fixed width for the buttons */
+  height: 40px; /* Fixed height for the buttons */
+  margin: 5px 0; /* Space between buttons */
+  padding: 5px;
+  text-align: center;
+  background-color: #4caf50; /* Green background color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.sidebar button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Floating Window Styles */
+.floating-window {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 100;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .floating-window {
+  background-color: #333;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.main-content {
+  overflow-y: auto;
+  max-height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Blurb display */
+.blurb-display {
+  white-space: pre-line;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-height: 100%;
+  overflow-y: auto;
+  white-space: pre-line;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .blurb-display {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.language-dropdown select {
+  padding: 8px;
+  margin-top: 5px;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+body.dark-mode .language-dropdown select {
+  background-color: #444;
+  color: #fff;
+  border-color: #555;
+}
+
+/* Page Styling */
+.home-page,
+.subcategory-section,
+.blurb-section {
+  padding: 20px;
+}
+
+/* Category buttons styling */
+button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+body.dark-mode button {
+  background-color: #555;
+  color: #fff;
+}
+
+body.dark-mode button:hover {
+  background-color: #777;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+body.dark-mode .search-box {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  animation: fadeInOut 2s ease;
+  font-size: 14px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+/* No animation for the floating bubble after the first click */
+#blurbinator-bubble.no-animation {
+  animation: none;
+}

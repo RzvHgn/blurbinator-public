@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Blurbinator",
+  "version": "0.9.12",
+  "description": "This tool is to be used within Amazon RISC department for ease of sending and translating blurbs.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/Blurb16.png",
+      "48": "icons/Blurb48.png",
+      "128": "icons/Blurb128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/Blurb16.png",
+    "48": "icons/Blurb48.png",
+    "128": "icons/Blurb128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "index.html",
+        "static/*",
+        "blurbs/DRBlurbs/*.json",
+        "blurbs/SABlurbs/*.json",
+        "BlurbinatorLogo.png",
+        "Blurb16.png",
+        "Blurb48.png",
+        "Blurb128.png",
+        "static/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
